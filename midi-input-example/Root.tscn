@@ -1,8 +1,10 @@
 [gd_scene format=2]
 
-[node name="3DRoot" type="Spatial"]
+[node name="Root" type="Node"]
 
-[node name="Camera" type="Camera" parent="."]
+[node name="3DRoot" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="3DRoot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
 
 [node name="Control" type="Control" parent="."]
