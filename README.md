@@ -2,6 +2,11 @@
 
 **Home:** <https://github.com/follower/godot-midi-input-example>
 
+**Official Godot docs:**
+
+ * [`InputEventMIDI`](https://docs.godotengine.org/en/latest/classes/class_inputeventmidi.html), [`MidiMessageList`](https://docs.godotengine.org/en/latest/classes/class_@globalscope.html#enum-globalscope-midimessagelist)
+ *[`open_midi_inputs()`](https://docs.godotengine.org/en/latest/classes/class_os.html#class-os-method-open-midi-inputs), [`get_connected_midi_inputs()`](https://docs.godotengine.org/en/latest/classes/class_os.html#class-os-method-get-connected-midi-inputs), [`close_midi_inputs()`](https://docs.godotengine.org/en/latest/classes/class_os.html#class-os-method-close-midi-inputs)
+
 ![](rancidbacon-godot-midi-input-example-screenshot.png)
 
 ## The Demo
