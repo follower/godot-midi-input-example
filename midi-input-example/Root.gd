@@ -8,3 +8,4 @@ func _ready():
 
 	for current_midi_input in OS.get_connected_midi_inputs():
 		print(current_midi_input)
+		$"Control/VBoxContainer/MidiInputsList".add_item(current_midi_input, null, false)
