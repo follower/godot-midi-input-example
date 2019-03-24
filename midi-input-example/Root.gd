@@ -32,6 +32,9 @@ func get_midi_message_description(event : InputEventMIDI):
 		return GlobalScope_MidiMessageList.keys()[event.message - 0x08]
 	return event.message
 
+# TODO: Add the black keys.
+const OCTAVE_KEY_INDEX = ["WhiteKey1", "BlackKey1", "WhiteKey2", "BlackKey2", "WhiteKey3", "WhiteKey4", "BlackKey3", "WhiteKey5", "BlackKey4", "WhiteKey6", "BlackKey5", "WhiteKey7"]
+
 
 func _unhandled_input(event : InputEvent):
 
@@ -52,3 +55,15 @@ func _unhandled_input(event : InputEvent):
 		# NOTE: Having "Scroll Following" enabled seems to break things if there are
 		#       too many messages sent at once.
 		$"Control/VBoxContainer/Container/RichTextLabel".add_text(event_dump)
+
+
+		var key_index = event.pitch % 12
+
+		match event.message:
+			MIDI_MESSAGE_NOTE_ON:
+				var current_key_node : CSGPrimitive = get_node("3DRoot/Octave/" + OCTAVE_KEY_INDEX[key_index])
+				current_key_node.translate(Vector3(0, -0.125, 0))
+
+			MIDI_MESSAGE_NOTE_OFF:
+				var current_key_node : CSGPrimitive = get_node("3DRoot/Octave/" + OCTAVE_KEY_INDEX[key_index])
+				current_key_node.translate(Vector3(0, +0.125, 0))
