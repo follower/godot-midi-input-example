@@ -15,12 +15,13 @@ margin_right = 1020.0
 margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 4.0
 margin_top = 10.0
 margin_right = 1020.0
 margin_bottom = 590.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
-margin_right = 1020.0
+margin_right = 1016.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -30,13 +31,13 @@ valign = 1
 
 [node name="Container" type="Container" parent="Control/VBoxContainer"]
 margin_top = 18.0
-margin_right = 1020.0
+margin_right = 1016.0
 margin_bottom = 567.0
 size_flags_vertical = 3
 
 [node name="MidiInputsList" type="ItemList" parent="Control/VBoxContainer"]
 margin_top = 571.0
-margin_right = 1020.0
+margin_right = 1016.0
 margin_bottom = 580.0
 auto_height = true
 
