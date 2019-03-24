@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.25098 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Root" type="Node"]
 script = ExtResource( 1 )
@@ -29,11 +41,27 @@ text = "Godot MIDI Input Example"
 align = 1
 valign = 1
 
-[node name="Container" type="Container" parent="Control/VBoxContainer"]
+[node name="Container" type="HSplitContainer" parent="Control/VBoxContainer"]
 margin_top = 18.0
 margin_right = 1016.0
 margin_bottom = 567.0
 size_flags_vertical = 3
+
+[node name="Container" type="Container" parent="Control/VBoxContainer/Container"]
+margin_right = 671.0
+margin_bottom = 549.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Container"]
+margin_left = 683.0
+margin_right = 1016.0
+margin_bottom = 549.0
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Test"
+scroll_following = true
 
 [node name="MidiInputsList" type="ItemList" parent="Control/VBoxContainer"]
 margin_top = 571.0
