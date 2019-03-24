@@ -1,6 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
+
+[sub_resource type="VisualShaderNodeColorUniform" id=2]
+output_port_for_preview = 0
+uniform_name = "ColorUniform"
+
+[sub_resource type="VisualShader" id=3]
+code = "shader_type spatial;
+uniform vec4 ColorUniform : hint_color;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	n_out2p0 = ColorUniform.rgb;
+	n_out2p1 = ColorUniform.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 0, -8.775 )
+nodes/fragment/0/position = Vector2( 600, 20 )
+nodes/fragment/2/node = SubResource( 2 )
+nodes/fragment/2/position = Vector2( 160, 80 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/ColorUniform = null
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0.25098 )
@@ -29,6 +71,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0 )
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 width = 1.0
 height = 0.5
+
+[node name="BlackKey1" type="CSGBox" parent="3DRoot/Octave"]
+transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 0.5, 0.25, -0.35 )
+width = 1.0
+height = 0.5
+material = SubResource( 4 )
 
 [node name="WhiteKey2" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
