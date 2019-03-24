@@ -25,3 +25,15 @@ text = "Godot MIDI Input Example"
 align = 1
 valign = 1
 
+[node name="Container" type="Container" parent="Control/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1020.0
+margin_bottom = 567.0
+size_flags_vertical = 3
+
+[node name="MidiInputsList" type="ItemList" parent="Control/VBoxContainer"]
+margin_top = 571.0
+margin_right = 1020.0
+margin_bottom = 580.0
+auto_height = true
+
