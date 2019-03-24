@@ -8,12 +8,17 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control"]
 margin_right = 1020.0
-margin_bottom = 40.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_top = 10.0
+margin_right = 1020.0
+margin_bottom = 590.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+margin_right = 1020.0
+margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Godot MIDI Input Example"
