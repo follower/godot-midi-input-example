@@ -60,7 +60,6 @@ margin_bottom = 549.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Test"
 scroll_following = true
 
 [node name="MidiInputsList" type="ItemList" parent="Control/VBoxContainer"]
