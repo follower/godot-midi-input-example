@@ -6,3 +6,5 @@ func _ready():
 
 	print(OS.get_connected_midi_inputs())
 
+	for current_midi_input in OS.get_connected_midi_inputs():
+		print(current_midi_input)
