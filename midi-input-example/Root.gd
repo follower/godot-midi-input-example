@@ -57,6 +57,7 @@ func _unhandled_input(event : InputEvent):
 		$"Control/VBoxContainer/Container/VBoxContainer/RichTextLabel".add_text(event_dump)
 
 
+		# Note: If the instrument isn't keyboard related it will possibly mess up the display.
 		var key_index = event.pitch % 12
 
 		match event.message:
