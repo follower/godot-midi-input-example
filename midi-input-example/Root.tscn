@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
 
-[sub_resource type="VisualShaderNodeColorUniform" id=2]
+[sub_resource type="VisualShaderNodeColorUniform" id=1]
 output_port_for_preview = 0
 uniform_name = "ColorUniform"
 
-[sub_resource type="VisualShader" id=3]
+[sub_resource type="VisualShader" id=2]
 code = "shader_type spatial;
 uniform vec4 ColorUniform : hint_color;
 
@@ -36,15 +36,15 @@ void light() {
 "
 graph_offset = Vector2( 0, -8.775 )
 nodes/fragment/0/position = Vector2( 600, 20 )
-nodes/fragment/2/node = SubResource( 2 )
+nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( 160, 80 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/ColorUniform = null
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.6, 0.6, 0.6, 0.25098 )
 border_width_left = 4
 border_width_top = 4
@@ -76,7 +76,7 @@ height = 0.5
 transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 0.5, 0.25, -0.35 )
 width = 1.0
 height = 0.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="WhiteKey2" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
@@ -87,7 +87,7 @@ height = 0.5
 transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 1.5, 0.25, -0.35 )
 width = 1.0
 height = 0.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="WhiteKey3" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
@@ -103,7 +103,7 @@ height = 0.5
 transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 3.5, 0.25, -0.35 )
 width = 1.0
 height = 0.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="WhiteKey5" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
@@ -114,7 +114,7 @@ height = 0.5
 transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 4.5, 0.25, -0.35 )
 width = 1.0
 height = 0.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="WhiteKey6" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
@@ -125,7 +125,7 @@ height = 0.5
 transform = Transform( 0.75, 0, 0, 0, 1, 0, 0, 0, 0.65, 5.5, 0.25, -0.35 )
 width = 1.0
 height = 0.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="WhiteKey7" type="CSGBox" parent="3DRoot/Octave"]
 transform = Transform( 0.95, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
@@ -163,12 +163,19 @@ margin_bottom = 549.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Container"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Container"]
 margin_left = 683.0
 margin_right = 1016.0
 margin_bottom = 549.0
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 1 )
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Container/VBoxContainer"]
+margin_right = 333.0
+margin_bottom = 549.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_following = true
 

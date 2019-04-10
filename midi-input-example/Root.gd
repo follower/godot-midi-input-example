@@ -54,7 +54,7 @@ func _unhandled_input(event : InputEvent):
 
 		# NOTE: Having "Scroll Following" enabled seems to break things if there are
 		#       too many messages sent at once.
-		$"Control/VBoxContainer/Container/RichTextLabel".add_text(event_dump)
+		$"Control/VBoxContainer/Container/VBoxContainer/RichTextLabel".add_text(event_dump)
 
 
 		var key_index = event.pitch % 12
