@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
+[ext_resource path="res://CheckBox.gd" type="Script" id=2]
 
 [sub_resource type="VisualShaderNodeColorUniform" id=1]
 output_port_for_preview = 0
@@ -172,12 +173,21 @@ size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Container/VBoxContainer"]
 margin_right = 333.0
-margin_bottom = 549.0
+margin_bottom = 521.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_following = true
+
+[node name="CheckBox" type="CheckBox" parent="Control/VBoxContainer/Container/VBoxContainer"]
+margin_top = 525.0
+margin_right = 333.0
+margin_bottom = 549.0
+hint_tooltip = "Some MIDI devices send messages faster than the scroll area can handle. If this happens disable \"Auto scroll output\".	"
+pressed = true
+text = "Auto scroll output"
+script = ExtResource( 2 )
 
 [node name="MidiInputsList" type="ItemList" parent="Control/VBoxContainer"]
 margin_top = 571.0
@@ -185,3 +195,4 @@ margin_right = 1016.0
 margin_bottom = 580.0
 auto_height = true
 
+[connection signal="toggled" from="Control/VBoxContainer/Container/VBoxContainer/CheckBox" to="Control/VBoxContainer/Container/VBoxContainer/CheckBox" method="_on_CheckBox_toggled"]
