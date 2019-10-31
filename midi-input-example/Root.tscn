@@ -46,7 +46,7 @@ shader = SubResource( 2 )
 shader_param/ColorUniform = null
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0.25098 )
+bg_color = Color( 0.141176, 0.141176, 0.141176, 0.501961 )
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -177,7 +177,7 @@ margin_bottom = 521.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 scroll_following = true
 
 [node name="CheckBox" type="CheckBox" parent="Control/VBoxContainer/Container/VBoxContainer"]
@@ -194,5 +194,4 @@ margin_top = 571.0
 margin_right = 1016.0
 margin_bottom = 580.0
 auto_height = true
-
 [connection signal="toggled" from="Control/VBoxContainer/Container/VBoxContainer/CheckBox" to="Control/VBoxContainer/Container/VBoxContainer/CheckBox" method="_on_CheckBox_toggled"]
